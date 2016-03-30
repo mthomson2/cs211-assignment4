@@ -1,0 +1,95 @@
+import java.io.*;
+import java.util.Scanner;
+
+
+public class database implements Library{
+
+	private static File fileName;
+	
+	@Override
+	public boolean setLibraryFile(String libraryFileName) {
+		// TODO Auto-generated method stub
+		Scanner sc;
+		try {
+			sc = new Scanner(new File(libraryFileName));
+			fileName =  new File(libraryFileName);
+		}
+		catch (IOException e) {
+			System.out.println("The file " + libraryFileName +" does not exist in this directory.");
+			return false;
+		}
+		sc.close();
+		return true;
+	}
+
+
+	@Override
+	public File getLibraryFile() {
+		// TODO Auto-generated method stub
+		System.out.println(fileName);
+		return fileName;
+	}
+
+
+	@Override
+	public String[] getLibraryBooks(boolean withPath) {
+		// TODO Auto-generated method stub
+		String[] books;
+		
+		
+		return null;
+	}
+	
+
+
+	@Override
+	public int getNumberOfBooks() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getLibraryOccurrences(String phrase) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public double getLibraryNewlinePercentage(char[] newlineChars) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getBookOccurrences(int bookNumber, String phrase) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getBookNumLines(int bookNumber) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public char[] getBookNewlineCharacters(int bookNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		database d = new database();
+		
+		d.setLibraryFile("C:/Users/Molly/CS211/assignment4/mthomso2-2H1-assignment4/text");
+		d.getLibraryFile();
+		
+		System.out.println(fileName);
+	}
+}
+
